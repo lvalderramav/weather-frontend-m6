@@ -1,28 +1,46 @@
-# 🌤️ Santiago Meteo - App de Clima (Módulo 5)
+# 🌤️ Santiago Meteo SPA - Aplicación de Clima (Módulo 6)
 
 ## 📝 Descripción
 
-Esta aplicación proporciona un monitoreo preciso de comunas clave de la Región Metropolitana. En esta iteración (Módulo 5), se reestructuró por completo la lógica interna utilizando principios de Programación Orientada a Objetos (POO), funciones modernas de JavaScript (ES6+) y consumo de datos mediante flujos asíncronos (`fetch` y `async/await`).
+Este proyecto transforma la aplicación tradicional de monitoreo meteorológico de la Región Metropolitana en una **Single Page Application (SPA)** moderna construida sobre **Vue.js 3** y estructurada mediante **Vue Router**. La interfaz opera de forma 100% reactiva procesando los flujos asíncronos de la API _Open-Meteo_ y ofreciendo una navegación fluida e interacciones dinámicas en tiempo real sin recargar el navegador.
 
-## 🏗️ Estructura de Clases (POO)
+## 📦 Vistas Principales
 
-La aplicación distribuye sus responsabilidades mediante dos clases principales:
+La interfaz se divide de forma limpia en componentes y vistas modulares:
 
-- **`ApiClient`**: Ubicada en `js/apiclient.js`. Clase autónoma encargada exclusivamente de realizar solicitudes de red mediante `fetch`, validar las respuestas HTTP y retornar estructuras crudas JSON.
-- **`WeatherApp`**: Ubicada en `js/weatherapp.js`. Clase controladora central que gestiona el estado local de la app, coordina las invocaciones del cliente, interactúa de forma segura con los elementos del DOM y encapsula los motores de cálculos estadísticos y alertas.
+1.  **Home (Ruta Inicial `/`)**: Despliega el catálogo de las **12 comunas históricas**. Incorpora un buscador predictivo interactivo enlazado mediante `v-model` y un selector global de unidades térmicas.
+2.  **Detalle de Lugar (Ruta Dinámica `/lugar/:id`)**: Renderiza la información extendida de la comuna seleccionada (humedad, viento y pronóstico extendido), calculando de manera automatizada las estadísticas semanales extremas, el histograma de condiciones y el sistema de alertas críticas.
 
-## 📡 API de Clima Utilizada
+## 🛣️ Enrutamiento (Vue Router)
 
-- **Endpoint de Prueba**: Servidor de archivos locales mediante la ruta estática `./data/clima.json`, simulando una respuesta JSON asíncrona de producción con tiempos de respuesta optimizados y libre de restricciones de CORS o tokens de autenticación.
+- `/` -> `HomeView.vue` (Listado y filtrado global).
+- `/lugar/:id` -> `DetailView.vue` (Ficha dinámica parametrizada mediante el ID único de la comuna).
 
-## 📊 Resumen de Cálculos Estadísticos y Alertas
+## 📊 Reglas de Negocio Incorporadas
 
-1.  **Estadísticas de la Semana**: Se calculan los valores extremos absolutos de temperatura mínima ($T_{min}$) y máxima ($T_{max}$), así como un promedio ponderado exacto por iteración lineal clásica sobre el arreglo de pronósticos.
-2.  **Filtros de Frecuencias**: Se agrupan y cuantifican las ocurrencias diarias por cadenas de estados meteorológicos coincidentes.
-3.  **Alertas Climáticas**: Implementación de condicionales con lógica de negocio:
-    - Si la temperatura promedio semanal es superior a los 22°C, se activa de forma automática una **"Alerta de Calor"**.
-    - Si se detectan dos o más días bajo descriptores de lluvia, se activa una alerta de **"Semana Lluviosa"**.
+- **Conversión Dinámica**: Cambio simultáneo en toda la interfaz entre la escala Celsius y Fahrenheit.
+- **Alertas Automatizadas**: Activación de una _Alerta de Calor_ si el promedio semanal supera los 22°C o una _Alerta de Semana Lluviosa_ si se registran dos o más jornadas con precipitaciones.
 
----
+## 🚀 Instrucciones de Ejecución
 
-- **Repositorio Público**: https://github.com/lvalderramav/weather-frontend-m5.git
+Para levantar el proyecto en un entorno local, asegúrate de contar con Node.js instalado y ejecuta los siguientes comandos:
+
+```bash
+# 1. Clonar el repositorio público
+git clone [https://github.com/lvalderramav/weather-frontend-m6.git](https://github.com/lvalderramav/weather-frontend-m6.git)
+
+# 2. Ingresar a la carpeta raíz del proyecto
+cd weather-frontend-m6
+
+# 3. Instalar las dependencias requeridas
+npm install
+
+# 4. Compilar los estilos SCSS (En caso de desarrollo)
+npm run sass:watch
+
+# 5. Levantar el servidor de desarrollo local
+npm run dev
+```
+# weather-frontend-m6
+# weather-frontend-m6
+# weather-frontend-m6

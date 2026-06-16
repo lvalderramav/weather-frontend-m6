@@ -3,95 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>App de Clima</title>
-        <!-- ----------------- -->
-        <!-- CDN CSS BOOTSTRAP -->
-        <!-- ----------------- -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-        <!-- ----------------- -->
-        <!-- LINK FONT AWESOME -->
-        <!-- ----------------- -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <title>Santiago Meteo — Vue SPA</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     </head>
     <body class="weather-app">
-        <!-- --------------------------------- -->
-        <!-- -------- BARRA NAVEGACIÓN ------- -->
-        <!-- --------------------------------- -->
-        <nav class="weather-app__navbar navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <p class="navbar-brand fw-bold" href="#"><i class="fa-regular fa-cloud"></i>&nbsp;&nbsp;App de Clima</p>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse text-center" id="navbarNav">
-                    <ul class="navbar-nav mx-auto gap-lg-5">
-                        <li id="link-home" class="nav-item">
-                            <a class="nav-link fw-bold text-decoration-underline active" aria-current="page" href="#"><i class="fa-regular fa-house"></i>&nbsp;Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-calendar-week"></i>&nbsp;Detalle</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-circle-info"></i>&nbsp;Acerca de</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- ------------ -->
-        <!-- ---HEADER--- -->
-        <!-- ------------ -->
-        <header class="weather-app__header container mt-5">
-            <h1 class="my-5 text-center text-decoration-underline">Santiago Meteo: Tu Guía del Clima Local</h1>
-            <p class="text-center fs-5">Monitoreo preciso y en tiempo real de las 10 comunas clave de la Región Metropolitana. Desde el calor de Colina hasta la brisa de Las Condes, obtén el pronóstico detallado y planifica tu semana con confianza.</p>
-        </header>
-        <!-- ------------ -->
-        <!-- ----MAIN---- -->
-        <!-- ------------ -->
-        <main class="weather-app__content d-flex flex-column flex-grow-1">
-            <!-- ----------------------------------- -->
-            <!-- CONTENEDOR DE TARJETAS DE EL TIEMPO -->
-            <!-- ----------------------------------- -->
-            <section id="vista-clima" class="py-5">
-                <div class="container">
-                    <div id="tiempo-container" class="row g-4"></div>
-                </div>
-            </section>
-            <!-- ------------------------- -->
-            <!-- --DETALLE DE EL TIEMPO--- -->
-            <!-- -AL HACER CLICK = DETALLE -->
-            <!-- ------------------------- -->
-            <section id="tiempo-detalle" class="d-none flex-grow-1 py-5">
-                <div class="container">
-                    <button id="btn-back" class="btn btn-success mb-4">Regresar</button>
-                    <div id="detalle-container"></div>
-                    <div id="detail-week" class="mt-5"></div>
-                    <div id="cantidad-detalle"></div>
-                </div>
-            </section>
-        </main>
+        <div id="app"></div>
 
-        
-        
-        <!-- -------- -->
-        <!-- -FOOTER- -->
-        <!-- -------- -->
-        <footer class="weather-app__footer text-white text-center py-4 bg-dark">
-            <div class="container">
-                <p class="mb-0">&copy; 2026 Santiago App de Clima.</p>
-            </div>
-        </footer>
-        <!-- ---------------- -->
-        <!-- CDN JS BOOTSTRAP -->
-        <!-- ---------------- -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-        <!-- ----------------- -->
-        <!-- JS PERSONALIZADOS -->
-        <!-- ----------------- -->
-        <script src="js/apiclient.js"></script>
-        <script src="js/weatherapp.js"></script>
-        <script src="js/main.js"></script>
+        <script type="module" src="src/main.js"></script>
     </body>
 </html>

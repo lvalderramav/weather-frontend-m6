@@ -41,6 +41,5 @@ npm run sass:watch
 # 5. Levantar el servidor de desarrollo local
 npm run dev
 ```
-# weather-frontend-m6
-# weather-frontend-m6
+
 # weather-frontend-m6
